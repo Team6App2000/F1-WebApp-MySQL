@@ -1,0 +1,42 @@
+﻿@model IEnumerable<F1_WebApp.Models.DriversTest>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+<h2>Drivers</h2>
+
+<table class="table">
+    <tr>
+        <th>DriverID</th>
+        <th>URL</th>
+        <th>GivenName</th>
+        <th>FamilyName</th>
+        <th>DateOfBirth</th>
+        <th>Nationality</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DriverID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.URL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GivenName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FamilyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nationality)
+            </td>
+        </tr>
+    }
+</table>
