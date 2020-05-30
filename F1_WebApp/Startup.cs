@@ -55,7 +55,7 @@ namespace F1_WebApp
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Drivers}/{action=Index}/{id?}");
             });
         }
     }
