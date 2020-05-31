@@ -11,7 +11,4 @@
   <ItemGroup>
     <Folder Include="Views\Home\" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Remove="Views\Home\Index.cshtml" />
-  </ItemGroup>
 </Project>
