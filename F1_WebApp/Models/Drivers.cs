@@ -6,8 +6,6 @@ namespace F1_WebApp.Models
     {
         public string DriverID { get; set; }
 
-        public string URL { get; set; }
-
         public string GivenName { get; set; }
 
         public string FamilyName { get; set; }

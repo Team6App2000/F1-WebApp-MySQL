@@ -1,41 +1,37 @@
-﻿@model IEnumerable<F1_WebApp.Models.Drivers>
+﻿@model IEnumerable<F1_WebApp.Models.Races>
 @{
     ViewData["Title"] = "Races";
     Layout = "~/Views/Shared/_layout.cshtml";
 }
 
-<h2>Drivers</h2>
+<h2>Races</h2>
 
 <table class="table">
     <tr>
-        <th>DriverID</th>
-        <th>URL</th>
-        <th>GivenName</th>
-        <th>FamilyName</th>
-        <th>DateOfBirth</th>
-        <th>Nationality</th>
+        <th>Race name</th>
+        <th>Season</th>
+        <th>Round</th>
+        <th>Date</th>
+        <th>Time</th>
     </tr>
 
     @foreach (var item in Model)
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.DriverID)
+                @Html.DisplayFor(modelItem => item.RaceName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.URL)
+                @Html.DisplayFor(modelItem => item.Season)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.GivenName)
+                @Html.DisplayFor(modelItem => item.Round)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FamilyName)
+                @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DateOfBirth)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nationality)
+                @Html.DisplayFor(modelItem => item.Time)
             </td>
         </tr>
     }

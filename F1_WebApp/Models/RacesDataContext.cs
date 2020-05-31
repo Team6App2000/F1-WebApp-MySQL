@@ -4,11 +4,11 @@ using MySql.Data.MySqlClient;
 
 namespace F1_WebApp.Models
 {
-    public class DriversDataContext
+    public class RacesDataContext
     {
         public string ConnectionString { get; set; }
 
-        public DriversDataContext(string connectionString)
+        public RacesDataContext(string connectionString)
         {
             this.ConnectionString = connectionString;
         }
@@ -18,26 +18,26 @@ namespace F1_WebApp.Models
             return new MySqlConnection(ConnectionString);
         }
 
-        public List<Drivers> GetAllDrivers()
+        public List<Races> GetAllRaces()
         {
-            List<Drivers> list = new List<Drivers>();
+            List<Races> list = new List<Races>();
 
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM DriversTest", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM RacesTest", conn);
 
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        list.Add(new Drivers()
+                        list.Add(new Races()
                         {
-                            DriverID = reader["driverId"].ToString(),
-                            GivenName = reader["givenName"].ToString(),
-                            FamilyName = reader["familyName"].ToString(),
-                            DateOfBirth = reader["dateOfBirth"].ToString(),
-                            Nationality = reader["nationality"].ToString()
+                            RaceName = reader["raceName"].ToString(),
+                            Season = Convert.ToInt32(reader["season"]),
+                            Round = reader["round"].ToString(),
+                            Date = reader["date"].ToString(),
+                            Time = reader["time"].ToString()
                         });
                     }
                 }

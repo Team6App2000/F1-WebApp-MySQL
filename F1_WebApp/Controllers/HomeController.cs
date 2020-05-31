@@ -22,5 +22,26 @@ namespace F1_WebApp
 
             return View(context.GetAllDrivers());
         }
+
+        public IActionResult Circuits()
+        {
+            CircuitsDataContext context = HttpContext.RequestServices.GetService(typeof(CircuitsDataContext)) as CircuitsDataContext;
+
+            return View(context.GetAllCircuits());
+        }
+
+        public IActionResult Constructors()
+        {
+            ConstructorsDataContext context = HttpContext.RequestServices.GetService(typeof(ConstructorsDataContext)) as ConstructorsDataContext;
+
+            return View(context.GetAllConstructors());
+        }
+
+        public IActionResult Races()
+        {
+            RacesDataContext context = HttpContext.RequestServices.GetService(typeof(RacesDataContext)) as RacesDataContext;
+
+            return View(context.GetAllRaces());
+        }
     }
 }
