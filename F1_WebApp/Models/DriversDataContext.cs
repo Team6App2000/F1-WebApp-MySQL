@@ -18,7 +18,7 @@ namespace F1_WebApp.Models
             return new MySqlConnection(ConnectionString);
         }
 
-        public List<Drivers> GetAllDriversTest()
+        public List<Drivers> GetAllDrivers()
         {
             List<Drivers> list = new List<Drivers>();
 

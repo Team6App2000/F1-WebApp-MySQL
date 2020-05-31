@@ -1,41 +1,57 @@
-﻿@model IEnumerable<F1_WebApp.Models.Drivers>
+﻿@model IEnumerable<F1_WebApp.Models.Results>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Results";
     Layout = "~/Views/Shared/_layout.cshtml";
 }
 
-<h2>Drivers</h2>
+<div class="text-left">
+    <h1 style="font-size:60px;">F1 Results - 2020</h1>
+</div>
+<br />
+<br />
 
 <table class="table">
     <tr>
-        <th>DriverID</th>
-        <th>URL</th>
-        <th>GivenName</th>
-        <th>FamilyName</th>
-        <th>DateOfBirth</th>
-        <th>Nationality</th>
+        <th>ConstructorID</th>
+        <th>Race name</th>
+        <th>Drivers</th>
+        <th>Number</th>
+        <th>Position</th>
+        <th>Points</th>
+        <th>Grid</th>
+        <th>Laps</th>
+        <th>Status</th>
     </tr>
 
     @foreach (var item in Model)
     {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.ConstructorID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RaceName)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.DriverID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.URL)
+                @Html.DisplayFor(modelItem => item.Number)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.GivenName)
+                @Html.DisplayFor(modelItem => item.Position)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FamilyName)
+                @Html.DisplayFor(modelItem => item.Points)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DateOfBirth)
+                @Html.DisplayFor(modelItem => item.Grid)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Nationality)
+                @Html.DisplayFor(modelItem => item.Laps)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
             </td>
         </tr>
     }

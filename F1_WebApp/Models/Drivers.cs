@@ -4,8 +4,6 @@ namespace F1_WebApp.Models
 {
     public class Drivers
     {
-        //    private DriversDataContext context;
-
         public string DriverID { get; set; }
 
         public string URL { get; set; }

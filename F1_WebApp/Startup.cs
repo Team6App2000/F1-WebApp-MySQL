@@ -29,6 +29,7 @@ namespace F1_WebApp
             // Add framework services.
             services.AddMvc();
             services.Add(new ServiceDescriptor(typeof(DriversDataContext), new DriversDataContext(Configuration.GetConnectionString("DefaultConnection"))));
+            services.Add(new ServiceDescriptor(typeof(ResultsDataContext), new ResultsDataContext(Configuration.GetConnectionString("DefaultConnection"))));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
