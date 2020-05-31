@@ -2,9 +2,9 @@
 
 namespace F1_WebApp.Models
 {
-    public class DriversTest
+    public class Drivers
     {
-        //    private DriversTestDataContext context;
+        //    private DriversDataContext context;
 
         public string DriverID { get; set; }
 
