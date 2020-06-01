@@ -1,0 +1,34 @@
+﻿@model IEnumerable<F1_WebApp.Models.Drivers>
+@{
+    ViewData["Title"] = "Drivers";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+<h2>Drivers</h2>
+
+<table class="table">
+    <tr>
+        <th>Last name</th>
+        <th>First name</th>
+        <th>Date of birth</th>
+        <th>Nationality</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.FamilyName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.GivenName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DateOfBirth)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nationality)
+    </td>
+</tr>
+    }
+</table>

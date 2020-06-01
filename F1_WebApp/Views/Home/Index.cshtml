@@ -1,0 +1,60 @@
+﻿@model IEnumerable<F1_WebApp.Models.Results>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+<div class="text-left">
+    <h1 style="font-size:60px;">F1 Results - 2019</h1>
+    <br />
+    <p style="color:red;">Due to COVID-19, the formula one season is postponed to an indefinite time </p>
+</div>
+<br />
+<br />
+
+<table class="table">
+    <tr>
+        <th>Drivers</th>
+        <th>Constructor</th>
+        <th>Race name</th>
+        <th>Number</th>
+        <th>Position</th>
+        <th>Points</th>
+        <th>Grid</th>
+        <th>Laps</th>
+        <th>Status</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DriverID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConstructorID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RaceName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Points)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Laps)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+        </tr>
+    }
+</table>

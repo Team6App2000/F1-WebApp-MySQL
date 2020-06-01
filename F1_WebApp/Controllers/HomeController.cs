@@ -1,37 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using F1_WebApp.Models;
+using Microsoft.AspNetCore.Mvc;
 
-namespace F1_WebApp.Controllers
+namespace F1_WebApp
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
         {
-            return View();
+            ResultsDataContext context = HttpContext.RequestServices.GetService(typeof(ResultsDataContext)) as ResultsDataContext;
+
+            return View(context.GetAllResults());
         }
 
-        public IActionResult Privacy()
+        public IActionResult Drivers()
         {
-            return View();
+            DriversDataContext context = HttpContext.RequestServices.GetService(typeof(DriversDataContext)) as DriversDataContext;
+
+            return View(context.GetAllDrivers());
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Circuits()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            CircuitsDataContext context = HttpContext.RequestServices.GetService(typeof(CircuitsDataContext)) as CircuitsDataContext;
+
+            return View(context.GetAllCircuits());
+        }
+
+        public IActionResult Constructors()
+        {
+            ConstructorsDataContext context = HttpContext.RequestServices.GetService(typeof(ConstructorsDataContext)) as ConstructorsDataContext;
+
+            return View(context.GetAllConstructors());
+        }
+
+        public IActionResult Races()
+        {
+            RacesDataContext context = HttpContext.RequestServices.GetService(typeof(RacesDataContext)) as RacesDataContext;
+
+            return View(context.GetAllRaces());
         }
     }
 }
