@@ -1,0 +1,38 @@
+﻿@model IEnumerable<F1_WebApp.Models.Races>
+@{
+    ViewData["Title"] = "Races";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+<h2>Races</h2>
+
+<table class="table">
+    <tr>
+        <th>Race name</th>
+        <th>Season</th>
+        <th>Round</th>
+        <th>Date</th>
+        <th>Time</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RaceName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Season)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Round)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Time)
+            </td>
+        </tr>
+    }
+</table>

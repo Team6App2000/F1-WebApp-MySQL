@@ -1,0 +1,30 @@
+﻿@model IEnumerable<F1_WebApp.Models.Circuits>
+@{
+    ViewData["Title"] = "Circuits";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+<h2>Circuits</h2>
+
+<table class="table">
+    <tr>
+        <th>Circuit name</th>
+        <th>Location</th>
+        <th>Country</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CircuitName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+        </tr>
+    }
+</table>
