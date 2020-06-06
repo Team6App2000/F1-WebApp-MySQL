@@ -1,20 +1,22 @@
-﻿@model IEnumerable<F1_WebApp.Models.Results>
+@model IEnumerable<F1_WebApp.Models.Results>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_layout.cshtml";
 }
 
 <div class="text-left">
-    <h1 style="font-size:60px;">F1 Results - 2020</h1>
+    <h1 style="font-size:60px;">F1 Results - 2019</h1>
+    <br />
+    <p style="color:red;">Due to COVID-19 outbreak, the formula one season is postponed to an indefinite time </p>
 </div>
 <br />
 <br />
 
 <table class="table">
     <tr>
+        <th>Drivers</th>
         <th>Constructor</th>
         <th>Race name</th>
-        <th>Drivers</th>
         <th>Number</th>
         <th>Position</th>
         <th>Points</th>
@@ -27,13 +29,13 @@
     {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.DriverID)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.ConstructorID)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.RaceName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DriverID)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Number)

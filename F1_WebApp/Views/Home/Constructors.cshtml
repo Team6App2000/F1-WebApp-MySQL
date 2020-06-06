@@ -1,4 +1,4 @@
-﻿@model IEnumerable<F1_WebApp.Models.Constructors>
+@model IEnumerable<F1_WebApp.Models.Constructors>
 @{
     ViewData["Title"] = "Constructors";
     Layout = "~/Views/Shared/_layout.cshtml";
@@ -8,27 +8,23 @@
 
 <table class="table">
     <tr>
-        <th>Constructor</th>
-        <th>URL</th>
         <th>Name</th>
+        <th>URL</th>
         <th>Nationality</th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ConstructorID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.URL)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nationality)
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.URL)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nationality)
+    </td>
+</tr>
     }
 </table>
